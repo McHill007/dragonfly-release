@@ -42,75 +42,79 @@ Todos &middot; Releases &middot; Notes &mdash; all in one native desktop app.
 
 DragonFly uses [PocketBase](https://pocketbase.io) as an optional sync backend. You can self-host it in seconds with Docker.
 
-### Quick Start with Docker
+### Dockerfile
 
-**1. Create a `docker-compose.yml`:**
+PocketBase has no official Docker image. Use this minimal `Dockerfile`:
+
+```dockerfile
+FROM alpine:latest
+
+ARG PB_VERSION=0.36.3
+
+RUN apk add --no-cache \
+    unzip \
+    ca-certificates
+
+# Download and unzip PocketBase
+ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip /tmp/pb.zip
+RUN unzip /tmp/pb.zip -d /pb/
+
+EXPOSE 8080
+
+CMD ["/pb/pocketbase", "serve", "--http=0.0.0.0:8080"]
+```
+
+### Docker Compose
+
+Create a `docker-compose.yml` next to the `Dockerfile`:
 
 ```yaml
 services:
   pocketbase:
-    image: ghcr.io/muchobien/pocketbase:latest
+    build: .
     container_name: dragonfly-pb
     restart: unless-stopped
     ports:
-      - "8090:8090"
+      - "8080:8080"
     volumes:
       - pb_data:/pb/pb_data
-      - pb_public:/pb/pb_public
-    healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://localhost:8090/api/health || exit 1
-      interval: 30s
-      timeout: 5s
-      retries: 3
 
 volumes:
   pb_data:
-  pb_public:
 ```
 
-**2. Start the server:**
+### Quick Start
+
+**1. Build and start:**
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
-**3. Create an admin account:**
+**2. Create a Superuser:**
 
-Open your browser and navigate to:
+You can create the admin account directly via the CLI inside the container:
 
+```bash
+docker exec dragonfly-pb /pb/pocketbase superuser create admin@example.com YOUR_PASSWORD
 ```
-http://localhost:8090/_/
-```
 
-PocketBase will prompt you to create a **Superuser** account on first launch. Enter an email and a secure password &mdash; you will need these credentials in DragonFly's sync settings.
+Or open the Admin UI in your browser at `http://localhost:8080/_/` and create one there.
 
 > **Important:** Save your admin credentials! You need them to set up the sync connection in DragonFly.
 
-**4. Connect DragonFly:**
+**3. Connect DragonFly:**
 
 In the DragonFly app, go to **Settings > Sync** and enter:
 
 | Field | Value |
 |-------|-------|
-| **Server URL** | `http://<your-server-ip>:8090` |
-| **Admin Email** | The superuser email from step 3 |
-| **Admin Password** | The superuser password from step 3 |
+| **Server URL** | `http://<your-server-ip>:8080` |
+| **Admin Email** | The superuser email from step 2 |
+| **Admin Password** | The superuser password from step 2 |
 | **Space Key** | A shared passphrase (used for encryption + auth) |
 
 Click **Setup Server** &mdash; DragonFly will automatically create all required collections and a sync user. After setup, click **Connect** to start syncing.
-
-### Running on a VPS / Remote Server
-
-For remote access, use a reverse proxy (e.g. Caddy, nginx) with HTTPS:
-
-```
-# Example Caddyfile
-dragonfly-sync.yourdomain.com {
-    reverse_proxy localhost:8090
-}
-```
-
-Then use `https://dragonfly-sync.yourdomain.com` as the Server URL in DragonFly.
 
 ### PocketBase Collections
 
