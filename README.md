@@ -9,6 +9,7 @@ Todos &middot; Releases &middot; Notes &mdash; all in one native desktop app.
 
 [![Latest Release](https://img.shields.io/github/v/release/McHill007/dragonfly-release?style=flat-square&color=00B4D8&label=latest)](https://github.com/McHill007/dragonfly-release/releases/latest)
 [![Windows](https://img.shields.io/badge/platform-Windows-0078D6?style=flat-square&logo=windows11&logoColor=white)](https://github.com/McHill007/dragonfly-release/releases/latest)
+[![Linux](https://img.shields.io/badge/platform-Linux-FCC624?style=flat-square&logo=linux&logoColor=black)](https://github.com/McHill007/dragonfly-release/releases/latest)
 [![Built with Tauri](https://img.shields.io/badge/built%20with-Tauri%20v2-FFC131?style=flat-square&logo=tauri&logoColor=white)](https://v2.tauri.app)
 
 ---
@@ -19,8 +20,12 @@ Todos &middot; Releases &middot; Notes &mdash; all in one native desktop app.
 
 | Installer | Description |
 |-----------|-------------|
+| `DragonFly.exe` | Portable Windows executable (no install needed) |
 | `DragonFly_x.x.x_x64_en-US.msi` | Standard Windows Installer (MSI) |
 | `DragonFly_x.x.x_x64-setup.exe` | NSIS Installer with **auto-update** support |
+| `dragonfly_x.x.x_amd64.deb` | Debian / Ubuntu package |
+| `dragonfly-x.x.x-1.x86_64.rpm` | Fedora / openSUSE package |
+| `dragonfly_x.x.x_amd64.AppImage` | Portable Linux executable |
 
 </div>
 
@@ -145,8 +150,45 @@ All data fields are **AES-GCM encrypted** with your space key before leaving the
 
 ---
 
-<div align="center">
+## Changelog
 
-Made with precision in Austria.
+### v0.1.2 (unreleased)
 
-</div>
+**Features**
+- Database backup (ZIP with DB + attachments) in Settings
+- Recycle bin for tasks and notes with restore/permanent delete
+- Delete confirmation dialogs for tasks, notes and releases
+- Deleting a feature asks whether to also delete child tasks
+- Tasks grouped under their feature in the board
+- Dragging a feature moves all child tasks along
+- Show/hide done toggle on the board
+- Feature modal shows list of child tasks
+- Dashboard with release and feature progress overview
+- CSV export for tasks
+- 6 new languages: Polish, French, Spanish, Italian, Romanian, Hindi
+- Linux builds (DEB, RPM, AppImage)
+- Portable Windows EXE in releases
+
+**Improvements**
+- Releases sorted descending in filter dropdowns
+- Features sorted alphabetically in filter dropdown
+
+**Bugfixes**
+- Fixed build error caused by unsupported Array method
+
+---
+
+### v0.1.1
+
+**Features**
+- PocketBase sync with end-to-end encryption
+- Passphrase protection with auto-lock
+- Hierarchical notes with sub-notes
+- AI text improvement (OpenAI integration)
+- File attachments for tasks and notes
+- Kanban board with drag-and-drop
+- Features and tasks (two-level hierarchy)
+- Release management with task assignment
+- User management with color avatars
+- Tags for tasks
+- Automated build and release via GitHub Actions
