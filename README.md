@@ -152,7 +152,7 @@ All data fields are **AES-GCM encrypted** with your space key before leaving the
 
 ## Changelog
 
-### v0.1.2 (unreleased)
+### v0.1.1
 
 **Features**
 - Database backup (ZIP with DB + attachments) in Settings
@@ -178,7 +178,7 @@ All data fields are **AES-GCM encrypted** with your space key before leaving the
 
 ---
 
-### v0.1.1
+### v0.1.0
 
 **Features**
 - PocketBase sync with end-to-end encryption
