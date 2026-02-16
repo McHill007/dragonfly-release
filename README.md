@@ -165,6 +165,24 @@ If you run into problems on your Linux distribution, please [open an issue](http
 
 ## Changelog
 
+### v0.1.4
+
+**Features**
+- Collapsible sidebar (240px / 56px) with icon tooltips and smooth transition
+- Collapsible Kanban columns with rotated text strip and drag-drop support
+- Default collapsed columns configurable in Settings (persisted to database)
+- Horizontal scroll on the board with min-width per column
+- Settings reorganized into 5-tab system (General, Users, Data, Sync, About)
+- License and third-party license info in About tab
+
+**Improvements**
+- Compact TaskCard design: smaller tags, release as text, avatar next to title
+- Standardized font sizes across Dashboard, Tasks, and Releases pages
+- Responsive toolbars with horizontal scroll and smaller controls
+- Board usable at smaller window sizes (min-width reduced to 800px)
+
+---
+
 ### v0.1.3
 
 **Features**
