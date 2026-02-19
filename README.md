@@ -5,7 +5,7 @@
 # DragonFly
 
 **Lightweight project management for small teams.**\
-Todos &middot; Releases &middot; Notes &mdash; all in one native desktop app.
+Projects &middot; Todos &middot; Releases &middot; Notes &mdash; all in one native desktop app.
 
 [![Latest Release](https://img.shields.io/github/v/release/McHill007/dragonfly-release?style=flat-square&color=00B4D8&labelColor=1a1a2e&label=latest)](https://github.com/McHill007/dragonfly-release/releases/latest)
 [![Windows](https://img.shields.io/badge/platform-Windows-0078D6?style=flat-square&logo=windows11&logoColor=white&labelColor=1a1a2e)](https://github.com/McHill007/dragonfly-release/releases/latest)
@@ -74,7 +74,7 @@ Plan and organize your releases. Assign tasks, track progress, and generate CAB 
 
 ### Notes
 
-Block-based rich text editor with hierarchical sub-notes, full-text search, tags, and file attachments.
+Block-based rich text editor with hierarchical sub-notes, Table of Contents navigation, full-text search, tags, and file attachments.
 
 <div align="center">
 <img src="docs/dragonfly_screens/notes.gif" alt="Notes" width="800" />
@@ -84,11 +84,17 @@ Block-based rich text editor with hierarchical sub-notes, full-text search, tags
 
 ### Settings
 
-Multi-language support (8 languages), database backup, update check, user management, and optional sync configuration.
+Multi-language support (8 languages), customizable AI prompts, database backup, update check, user management, and optional sync configuration.
 
 <div align="center">
 <img src="docs/dragonfly_screens/settings.gif" alt="Settings" width="800" />
 </div>
+
+---
+
+## Multi-Project Support
+
+Create and manage multiple projects from a visual project selection screen. Each project has its own tasks, notes, releases, and sync configuration. Join shared projects from teammates via Sync URL + Space Key, or keep projects local-only.
 
 ---
 
@@ -131,6 +137,8 @@ In the app, go to **Settings > Sync** and enter:
 
 Click **Setup Server** &mdash; DragonFly will automatically create all required collections and a sync user. After setup, click **Connect** to start syncing.
 
+Teammates can **join** a synced project by entering the same Sync URL and Space Key in the Join Project dialog.
+
 ---
 
 ## Built with Modern Tools
@@ -164,6 +172,28 @@ If you run into problems on your Linux distribution, please [open an issue](http
 ---
 
 ## Changelog
+
+### v0.1.5
+
+**Features**
+- Multi-project support with visual project selection screen (create, edit, delete, switch)
+- Join shared projects from teammates via Sync URL + Space Key
+- Table of Contents panel for Notes (click headings to navigate)
+- Collapsible tag section in Notes with inline tag editing
+- Customizable AI prompts for notes, tasks, and CAB reports in Settings
+- Leave project option for synced projects (removes local copy, keeps remote)
+- Per-project sync credentials (each project can use a different server)
+
+**Improvements**
+- Attachments cleaned up when deleting a project
+- Sync credentials cleared on project leave/delete to prevent ghost reconnects
+- Project metadata (name, description, color) syncs to remote
+
+**Bugfixes**
+- Fixed tombstone reconnect loop that repeatedly tried to sync deleted projects
+- Fixed project leave functionality not properly disconnecting sync
+
+---
 
 ### v0.1.4
 
