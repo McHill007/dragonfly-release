@@ -173,25 +173,37 @@ If you run into problems on your Linux distribution, please [open an issue](http
 
 ## Changelog
 
-### v0.1.5
 
-**Features**
-- Multi-project support with visual project selection screen (create, edit, delete, switch)
-- Join shared projects from teammates via Sync URL + Space Key
-- Table of Contents panel for Notes (click headings to navigate)
-- Collapsible tag section in Notes with inline tag editing
-- Customizable AI prompts for notes, tasks, and CAB reports in Settings
-- Leave project option for synced projects (removes local copy, keeps remote)
-- Per-project sync credentials (each project can use a different server)
+## v0.1.6
 
-**Improvements**
-- Attachments cleaned up when deleting a project
-- Sync credentials cleared on project leave/delete to prevent ghost reconnects
-- Project metadata (name, description, color) syncs to remote
+### Features
+- Scratchpad with Excalidraw drawing canvas (two-panel layout, auto-save, manual save)
 
-**Bugfixes**
-- Fixed tombstone reconnect loop that repeatedly tried to sync deleted projects
-- Fixed project leave functionality not properly disconnecting sync
+---
+
+## v0.1.5
+
+### Features
+- `dragonfly://` Space URL protocol for simplified project joining
+- Schema versioning system with automatic migration support
+- Remote schema version check on project open and join
+- Multi-project support with project selection screen and sidebar indicator
+- Table of Contents panel for notes (heading extraction, click-to-scroll)
+- Customizable AI prompts in Settings (Notes, Tasks, CAB report)
+- Project leave functionality
+- PocketBase backup & restore help section in sync settings
+- Logs tab in settings for sync diagnostics
+
+### Improvements
+- Redesigned sync settings: separate sync info and admin credentials cards
+- Verify admin credentials against server before saving
+- Password visibility toggle for admin password fields
+- Migrated admin credentials from config.ini to database
+- Renamed release artifacts for consistency
+- Collapsible tags section at bottom of notes tree sidebar
+- Better error handling in sync service
+- Clean up attachments on project delete
+- Fix tombstone reconnect loop (clear sync credentials on tombstone detection)
 
 ---
 
