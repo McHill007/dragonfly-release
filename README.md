@@ -173,6 +173,23 @@ If you run into problems on your Linux distribution, please [open an issue](http
 
 ## Changelog
 
+### v0.1.10
+
+**Features**
+- Scratchpad recycle bin in Settings > Data (restore, permanent delete, empty all)
+- Scratchpad favorites with star toggle and collapsible sidebar section
+- Multi-login auth handling: dialog to fix Space Key or leave project on auth failure
+- Empty states for Releases, Todos, and Scratchpads with icons and create buttons
+
+**Improvements**
+- Notes favorites section collapsible with chevron toggle and count
+- Scratchpads sorted alphabetically, showing created/updated timestamps
+- Responsive task toolbar: collapse buttons and hide labels on smaller screens
+- Sync tombstone fix: restored items no longer re-deleted on next sync
+- Scratchpad autosave: flush pending changes on switch and navigation
+
+---
+
 ### v0.1.9
 
 **Improvements**
