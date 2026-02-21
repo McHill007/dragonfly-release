@@ -146,7 +146,7 @@ Teammates can **join** a synced project by entering the same Sync URL and Space 
 | Layer | Technology |
 |-------|------------|
 | Runtime | [Tauri v2](https://v2.tauri.app) (Rust + WebView) |
-| Frontend | React 18 + TypeScript + Vite |
+| Frontend | React 19 + TypeScript + Vite |
 | UI | Tailwind CSS v4 + shadcn/ui |
 | Editor | BlockNote |
 | State | Zustand |
@@ -172,6 +172,20 @@ If you run into problems on your Linux distribution, please [open an issue](http
 ---
 
 ## Changelog
+
+### v0.1.11
+
+**Improvements**
+- Upgrade all dependencies (React 19, Zustand 5, Vite 7, dnd-kit 10, i18next 25, Tailwind 4.2, TypeScript 5.9)
+- Resizable sidebar in Notes and Scratchpad pages (drag handle to widen)
+- Batch move for kanban feature drag (single state update + single DB query instead of per-child)
+- Fix download link on schema-blocked screen
+
+**Bugfixes**
+- Fix scratchpad content overwrite when switching quickly between pads
+- Fix external links not opening (missing shell permission)
+
+---
 
 ### v0.1.10
 
