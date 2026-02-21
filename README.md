@@ -84,7 +84,7 @@ Block-based rich text editor with hierarchical sub-notes, Table of Contents navi
 
 ### Settings
 
-Multi-language support (8 languages), customizable AI prompts, database backup, update check, user management, and optional sync configuration.
+Multi-language support (7 languages), customizable AI prompts, database backup, update check, user management, and optional sync configuration.
 
 <div align="center">
 <img src="docs/dragonfly_screens/settings.gif" alt="Settings" width="800" />
@@ -94,7 +94,7 @@ Multi-language support (8 languages), customizable AI prompts, database backup, 
 
 ## Multi-Project Support
 
-Create and manage multiple projects from a visual project selection screen. Each project has its own tasks, notes, releases, and sync configuration. Join shared projects from teammates via Sync URL + Space Key, or keep projects local-only.
+Create and manage multiple projects from a visual project selection screen. Each project has its own tasks, notes, releases, and sync configuration. Join shared projects from teammates via `dragonfly://` Space URL or Sync URL + Space Key, or keep projects local-only.
 
 ---
 
@@ -173,34 +173,70 @@ If you run into problems on your Linux distribution, please [open an issue](http
 
 ## Changelog
 
+### v0.1.9
 
-## v0.1.6
+**Improvements**
+- Centralized logging service for consistent error tracking
+- Fix silent catch blocks across the codebase
+- Safe JSON.parse with fallback handling
 
-### Features
+---
+
+### v0.1.8
+
+**Features**
+- Task priority field
+- Note favorites with sticky links in sidebar
+- Embeddable scratchpad blocks in notes and tasks
+- Dashboard empty state with project selection improvements
+
+**Improvements**
+- New logo and sidebar font
+- Center settings tabs and fix minimum width for settings cards
+- Remove Hindi language
+- Remove legacy JSON migration
+- Robust schema verification and scratchpad improvements
+
+**Bugfixes**
+- Fix border in BlockNote editor
+
+---
+
+### v0.1.7
+
+**Features**
 - Scratchpad with Excalidraw drawing canvas (two-panel layout, auto-save, manual save)
 
 ---
 
-## v0.1.5
+### v0.1.6
 
-### Features
+**Features**
 - `dragonfly://` Space URL protocol for simplified project joining
 - Schema versioning system with automatic migration support
 - Remote schema version check on project open and join
-- Multi-project support with project selection screen and sidebar indicator
-- Table of Contents panel for notes (heading extraction, click-to-scroll)
-- Customizable AI prompts in Settings (Notes, Tasks, CAB report)
-- Project leave functionality
 - PocketBase backup & restore help section in sync settings
 - Logs tab in settings for sync diagnostics
 
-### Improvements
+**Improvements**
 - Redesigned sync settings: separate sync info and admin credentials cards
 - Verify admin credentials against server before saving
 - Password visibility toggle for admin password fields
 - Migrated admin credentials from config.ini to database
 - Renamed release artifacts for consistency
+
+---
+
+### v0.1.5
+
+**Features**
+- Multi-project support with project selection screen and sidebar indicator
+- Table of Contents panel for notes (heading extraction, click-to-scroll)
+- Customizable AI prompts in Settings (Notes, Tasks, CAB report)
+- Project leave functionality
 - Collapsible tags section at bottom of notes tree sidebar
+
+**Improvements**
 - Better error handling in sync service
 - Clean up attachments on project delete
 - Fix tombstone reconnect loop (clear sync credentials on tombstone detection)
