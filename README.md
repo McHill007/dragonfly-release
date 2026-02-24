@@ -146,7 +146,7 @@ Teammates can **join** a synced project by entering the same Sync URL and Space 
 | Layer | Technology |
 |-------|------------|
 | Runtime | [Tauri v2](https://v2.tauri.app) (Rust + WebView) |
-| Frontend | React 18 + TypeScript + Vite |
+| Frontend | React 19 + TypeScript + Vite |
 | UI | Tailwind CSS v4 + shadcn/ui |
 | Editor | BlockNote |
 | State | Zustand |
@@ -173,6 +173,7 @@ If you run into problems on your Linux distribution, please [open an issue](http
 
 ## Changelog
 
+<<<<<<< HEAD
 ### v0.1.12
 
 **Features**
@@ -190,6 +191,36 @@ If you run into problems on your Linux distribution, please [open an issue](http
 
 **Bugfixes**
 - Fix window X button doing nothing when "Minimize to Tray" is disabled
+=======
+### v0.1.11
+
+**Improvements**
+- Upgrade all dependencies (React 19, Zustand 5, Vite 7, dnd-kit 10, i18next 25, Tailwind 4.2, TypeScript 5.9)
+- Resizable sidebar in Notes and Scratchpad pages (drag handle to widen)
+- Batch move for kanban feature drag (single state update + single DB query instead of per-child)
+- Fix download link on schema-blocked screen
+
+**Bugfixes**
+- Fix scratchpad content overwrite when switching quickly between pads
+- Fix external links not opening (missing shell permission)
+
+---
+
+### v0.1.10
+
+**Features**
+- Scratchpad recycle bin in Settings > Data (restore, permanent delete, empty all)
+- Scratchpad favorites with star toggle and collapsible sidebar section
+- Multi-login auth handling: dialog to fix Space Key or leave project on auth failure
+- Empty states for Releases, Todos, and Scratchpads with icons and create buttons
+
+**Improvements**
+- Notes favorites section collapsible with chevron toggle and count
+- Scratchpads sorted alphabetically, showing created/updated timestamps
+- Responsive task toolbar: collapse buttons and hide labels on smaller screens
+- Sync tombstone fix: restored items no longer re-deleted on next sync
+- Scratchpad autosave: flush pending changes on switch and navigation
+>>>>>>> d6640cd1056bdc8cd2f539802907ee70174ffd08
 
 ---
 
