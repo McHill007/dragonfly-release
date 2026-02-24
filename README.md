@@ -173,6 +173,26 @@ If you run into problems on your Linux distribution, please [open an issue](http
 
 ## Changelog
 
+### v0.1.12
+
+**Features**
+- Personal reminders with due dates, recurrence, SMTP email notifications, and alert sound
+- Minimize to system tray on window close (configurable in Settings)
+- Autostart on system login — app starts in the tray so reminders are always active (cross-platform, configurable in Settings)
+- Cross-device reminder sync via PocketBase: a single sync secret derives both a public record ID and a private AES encryption key — the server never sees the plaintext
+- "New Task" entry in the tray context menu for quick task creation without opening the app
+- Global **Ctrl+N** shortcut to open the new task dialog, even when the app is only in the tray
+
+**Improvements**
+- Admin credentials are now stored per project instead of globally, enabling multiple projects on different PocketBase servers
+- Setting admin credentials for one project automatically propagates to all other local projects on the same server (trailing-slash normalized)
+- Admin credential fields in the schema upgrade dialog are pre-filled when credentials are already stored for that project
+
+**Bugfixes**
+- Fix window X button doing nothing when "Minimize to Tray" is disabled
+
+---
+
 ### v0.1.9
 
 **Improvements**
