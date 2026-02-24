@@ -173,7 +173,7 @@ If you run into problems on your Linux distribution, please [open an issue](http
 
 ## Changelog
 
-<<<<<<< HEAD
+
 ### v0.1.12
 
 **Features**
@@ -191,7 +191,9 @@ If you run into problems on your Linux distribution, please [open an issue](http
 
 **Bugfixes**
 - Fix window X button doing nothing when "Minimize to Tray" is disabled
-=======
+
+---
+
 ### v0.1.11
 
 **Improvements**
