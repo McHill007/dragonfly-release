@@ -174,6 +174,20 @@ If you run into problems on your Linux distribution, please [open an issue](http
 ## Changelog
 
 
+### v0.1.13
+
+**Features**
+- Code blocks with syntax highlighting and language selection (powered by Shiki via `@blocknote/code-block`)
+- Mermaid diagram blocks in the notes editor — edit mode shows a textarea, view mode renders the diagram as SVG
+- Support for all Mermaid diagram types including architecture diagrams with built-in icons (cloud, database, disk, internet, server)
+- Insert Mermaid diagrams via the `/` slash menu
+
+**Bugfixes**
+- Mermaid architecture diagram icons now render correctly (icon SVG was stripped by DOMPurify in strict mode)
+- Markdown export now serializes Mermaid blocks as proper ` ```mermaid ` fences instead of lossy text
+
+---
+
 ### v0.1.12
 
 **Features**
