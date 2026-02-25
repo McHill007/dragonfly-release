@@ -174,6 +174,19 @@ If you run into problems on your Linux distribution, please [open an issue](http
 ## Changelog
 
 
+### v0.1.14
+
+**Features**
+- Single-instance enforcement: launching a second instance brings the existing window into focus instead of starting a new process
+- Autostart now starts the app silently in the tray (window stays hidden on login, opens on first manual interaction)
+
+**Bugfixes**
+- Attachments (images, files) in notes and tasks now display correctly on all synced PCs — previously the image path pointed to the originating machine
+- Permanently deleting a note/task from the recycle bin on one PC now also removes it from the recycle bin on other synced PCs on next sync
+- Fixed startup crash ("HotKey already registered") when a previous instance did not clean up its global shortcut
+
+---
+
 ### v0.1.13
 
 **Features**
