@@ -174,6 +174,24 @@ If you run into problems on your Linux distribution, please [open an issue](http
 ## Changelog
 
 
+### v0.1.15
+
+**Features**
+- Markdown paste: pasting markdown text (from any source, VS Code, terminals, etc.) is automatically converted to rich blocks via the `marked` library — headings, lists, code blocks, tables and more all paste correctly
+- In-document anchor links (e.g. table of contents generated from pasted markdown) now scroll to the target heading in view mode instead of navigating to an external URL
+
+**Improvements**
+- Editor typography: Geist Sans font, 14px base size, tighter letter-spacing for a cleaner reading experience
+- Inline code styling: warm amber pill (amber background, border, monospace font)
+- Block styles: editorial quote with left accent, fading gradient divider, muted list markers, fully muted checked items
+- Table of Contents panel: smaller 11px text with level-based color hierarchy (H1 dark → H2 grey → H3 light)
+
+**Bugfixes**
+- Fixed "Edit link" button text invisible (white on white) in the BlockNote link toolbar
+- Removed "Open in new tab" button from the link toolbar
+
+---
+
 ### v0.1.14
 
 **Features**
