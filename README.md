@@ -267,7 +267,6 @@ If you run into problems on your Linux distribution, please [open an issue](http
 - Responsive task toolbar: collapse buttons and hide labels on smaller screens
 - Sync tombstone fix: restored items no longer re-deleted on next sync
 - Scratchpad autosave: flush pending changes on switch and navigation
->>>>>>> d6640cd1056bdc8cd2f539802907ee70174ffd08
 
 ---
 
